@@ -21,6 +21,12 @@ class SecondViewController: UIViewController {
         return label
     }()
     
+    private lazy var proverka: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .red
+        return label
+    }()
+    
 //    private lazy var testLabel: UILabel = {
 //        let label = UILabel()
 //        label.backgroundColor = .red
@@ -29,6 +35,7 @@ class SecondViewController: UIViewController {
     
     var secondUser = ""
     var secondOld = ""
+    var otbrazit = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,8 @@ class SecondViewController: UIViewController {
         Viewshka()
         secondlabelName.text = secondUser
         secondlabelOld.text = secondOld
+        proverka.text = otbrazit
+        
     }
     
     func Viewshka() {
@@ -53,6 +62,13 @@ class SecondViewController: UIViewController {
         view.addSubview(secondlabelOld)
         secondlabelOld.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(300)
+            make.left.equalTo(view.snp.left).offset(50)
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+        }
+        view.addSubview(proverka)
+        proverka.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(400)
             make.left.equalTo(view.snp.left).offset(50)
             make.width.equalTo(300)
             make.height.equalTo(50)

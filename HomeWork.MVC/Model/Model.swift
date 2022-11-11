@@ -19,13 +19,19 @@ class Model {
     
     
     func proverka(user: String, pass: String) {
-        serviceStore.users.updateValue(user, forKey: pass)
+        serviceStore.users.updateValue(pass, forKey: user)
         print("Model recievied: \(user) and \(pass)")
     }
     
-    func test() -> [String: String] {
+    func test(user: String, pass: String) -> [String: String] {
+        if serviceStore.users[user] != nil {
+            if pass == serviceStore.users[user] {
+            print("in")
+            }
+        } else {
+           print("wrong")
+        }
         return serviceStore.users
     }
-    
     
 }

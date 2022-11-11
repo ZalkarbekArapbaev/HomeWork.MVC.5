@@ -22,8 +22,8 @@ class Controller {
         model.proverka(user: user, pass: pass)
     }
     
-    func getFromModel() -> [String: String] {
-        model.test()
+    func getFromModel(user: String, pass: String) -> [String: String] {
+        model.test(user: user, pass: pass)
        
     }
     
