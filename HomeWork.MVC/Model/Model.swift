@@ -24,12 +24,16 @@ class Model {
     }
     
     func test(user: String, pass: String) -> [String: String] {
-        if serviceStore.users[user] != nil {
-            if pass == serviceStore.users[user] {
-            print("in")
+        for (username, password) in serviceStore.users {
+            if username == user {
+                if password == pass {
+                    print("in")
+                    break
+                }
+            } else {
+                print("wrong")
+                break
             }
-        } else {
-           print("wrong")
         }
         return serviceStore.users
     }
